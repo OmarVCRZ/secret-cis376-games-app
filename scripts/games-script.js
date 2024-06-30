@@ -3,20 +3,21 @@ $(document).ready(function () {
 
   console.log("Welcome to my Gaming Odyssey");
   
-   // issue-1 click btn load songs: https://github.com/OmarVCRZ/cis376-games-app/issues/1#issue-2378974595
+   // issue-0: Click btn load games: https://github.com/OmarVCRZ/cis376-games-app/issues/1#issue-2378974595
   
     //what dom?
       //$('dom selector').method(arguments of the method)
   // $('#btnLoadGames').click(function(){
 
+  // Issue-3: Created a click event for loading games: https://github.com/OmarVCRZ/cis376-games-app/issues/4#issue-2381955806
   $('#btnLoadGames').on('click', function(){
 
     $(`#favList`).slideToggle(2000).empty();
 
     //IIFE = Immediately invoked function expression
-    console.log("Clicked Load Games")
+    console.log("Clicked Load Games");
     
-    console.log('more lines of code')
+    // console.log('more lines of code')
 
     // $('#favList').append('<li>For Honor</li>');
 
@@ -51,8 +52,9 @@ $(document).ready(function () {
     // {
     //   $('#favList').append(`<li 
     //   class="list-group-item"> ${gamesList[j]} </li>`);
-    // }
+    // };
 
+    // Issue-4: Add Content to dom from the array on click: https://github.com/OmarVCRZ/cis376-games-app/issues/5#issue-2381956185
     $(gamesList).each(function(index, value){
 
       $('#favList').append(`<li 
@@ -61,14 +63,17 @@ $(document).ready(function () {
     });
 
   });
-
+  
+  // Issue-3: Created a click event for clearing games: https://github.com/OmarVCRZ/cis376-games-app/issues/4#issue-2381955806
   $('#btnClearGames').on('click', function(){
     $('#favList').slideToggle(1000).empty();
+    console.log("Clicked Clear Games");
   });
 
   // make a data thing: array (list)
   // var => let (change) or const (no change)
 
+  // Issue-2: Initialize an array of games: https://github.com/OmarVCRZ/cis376-games-app/issues/3#issue-2381946179 
   let gamesList = [
     
     "<em>God of War</em>: Ragnarok", 
@@ -83,7 +88,7 @@ $(document).ready(function () {
     "Mortal Kombat (2011)",
     "Horizon Forbidden West"
 
-  ]; // add games later on...
+  ];
 
 });
 
