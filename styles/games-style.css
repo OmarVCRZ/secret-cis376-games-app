@@ -57,13 +57,30 @@ h2 {
   text-align: left;
 }
 
+#home h2 {
+  text-decoration: underline;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.iframe-container {
+  width: 100%;
+  text-align: center; 
+  margin-top: px; 
+  background-color: #B6E2D3;
+}
+
+
 /* Added code for button */
-/* .seeMe {
-  border-style: dashed;
+.seeMe {
+  /* border-style: dashed;
   border-width: 4px;
-  border-color: green; 
+  border-color: green;  */
   border: dashed 4px green;
-} */
+}
 
 #currentList {
   background-color: #B6E2D3
