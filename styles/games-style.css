@@ -31,6 +31,8 @@ body {
   text-align: center;
 }
 
+
+
 footer {
   background-color: #fff;
   margin-top: 10px;
@@ -66,6 +68,9 @@ h2 {
   text-align: center;
 }
 
+#aboutMain {
+  padding-bottom: 80px;
+}
 .iframe-container {
   width: 100%;
   text-align: center; 
@@ -73,13 +78,35 @@ h2 {
   background-color: #B6E2D3;
 }
 
-
 /* Added code for button */
 .seeMe {
   /* border-style: dashed;
   border-width: 4px;
   border-color: green;  */
-  border: dashed 4px green;
+  border: dashed 4px rgb(128, 0, 119);
+}
+
+#CodeAcademy {
+  border: dashed 4px rgb(128, 0, 119);
+}
+/* Ensures that the cards have equal length */
+.row-cols-1 > .col,
+.row-cols-md-2 > .col {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+
+.row-cols-1 .card,
+.row-cols-md-2 .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Make sures the card body fills up any space */
+.card-body {
+  flex: 1 1 auto;
 }
 
 #currentList {
