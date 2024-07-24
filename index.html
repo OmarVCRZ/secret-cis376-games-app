@@ -9,7 +9,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Omar's Games App</title>
+  <title>Omar's Secret Games App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
@@ -18,13 +18,11 @@
 
 <body>
 
-  <!-- <button class="btn btn-info m-3">clicknin</button> -->
-
   <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <i class="bi bi-controller"></i>
-        Omar's Games APP</a>
+        Omar's Secret Games APP</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -43,9 +41,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#currentGames">Currently Playing</a>
           </li>       
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="#gamesRadar">Games on My Radar</a>
-          </li> -->
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="#thankYou">Thank you</a>
           </li>
@@ -62,9 +60,6 @@
             <a class="nav-link" target="nu" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fomarvcrz.github.io%2Fcis376-games-app%2F">
               Check Page Validity</a>
           </li>
-          <!--<li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> 
-        </li> -->
         </ul>
       </div>
     </div>
@@ -79,6 +74,7 @@
           alt="Gaming Girl Gif">
       </div>
     </header>
+
     <section id="gameOdyssey">
       <br>
       <h2><u>Gaming Odyssey</u></h2>
@@ -101,90 +97,122 @@
     <section id="favoriteGames" class="ms-2 p-2">
       <h2><u>Favorite Games!</u></h2>
       <div class="mb-3">
-        <!-- Issue-1: Added two bootstrap classes (button): https://github.com/OmarVCRZ/cis376-games-app/issues/2#issue-2381939175-->
-        <button id="btnLoadGames" class="btn btn-outline-dark">Load Games</button>
-        <button id="btnClearGames" class="btn btn-outline-dark">Clear Games</button>
+
+        <button id="btnAddSong" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#addGameModal">Add Game</button>
+        
+        <button id="btnShowAll" class="btn btn-light btn-sm">Show All</button>
+        <button id="btnHideAll" class="btn btn-light btn-sm">Hide All</button>
+    
+        <button id="btnConsoleData" class="btn btn-light btn-sm">Write Data Object in Console</button>
+    
       </div>
 
-      <ul id="favList" class="list-group">
-        <li><em>The Godfather 2</em></li>
-        <li><em>The Last of Us Part 2</em></li>
-        <li><em>God of War 3</em></li>
-        <li><em>Call of Duty: Modern Warfare 2 (2009)</em></li>
-        <li><em>Mortal Kombat (2011)</em></li>
-        <li class="list-group-item"><em>Horizon Forbidden West</em></li>
+      <!-- Modal -->
+      <div id="addGameModal" class="modal fade" tabindex="-1" aria-labelledby="addGameModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add New Game</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <ul class="list-group">
+
+                <li class="input-group w-100">
+                  <span class="w-20 input-group-text">Game Name</span>
+                  <input id="gameAddName" type="text" class="form-control" placeholder="game name">
+                </li>
+
+                <li class="input-group w-100">
+                  <span class="w-20 input-group-text">Studio</span>
+                  <input id="gameAddStudio" type="text" class="form-control" placeholder="studio" >
+                </li>
+
+                <li class="input-group w-100">
+                  <span class="w-20 input-group-text">Publisher</span>
+                  <input id="gameAddPublisher" type="text" class="form-control" placeholder="publisher">
+                </li>
+            
+                <li class="input-group w-100">
+                  <span class="w-20 input-group-text">Genre</span>
+                  <input id="gameAddGenre" type="text" class="form-control" placeholder="genre">
+                </li>
+            
+                <li class="input-group w-100">
+                  <span class="w-20 input-group-text">Release Date</span>
+                  <input id="gameAddReleaseDate" type="text" class="form-control" placeholder="release date">
+                </li>
+            
+                <li class="input-group w-100">
+                  <span class="w-20 input-group-text">Platform</span>
+                  <input id="gameAddPlatform" type="text" class="form-control" placeholder="platform">
+                </li>
+            
+                <li class="input-group w-100">
+                  <span class="w-20 input-group-text">ESRB Rating</span>
+                    <input id="gameAddESRBRating" type="text" class="form-control" placeholder="esrb rating">
+                </li>
+            
+                <li class="input-group w-100">
+                  <span class="w-20 input-group-text">TrailerURL</span>
+                    <input id="gameAddTrailerURL" type="text" class="form-control" placeholder="trailer url">
+            
+                <li class="input-group w-100">
+                  <span class="w-20 input-group-text">Tags</span>
+                  <input id="gameAddTags" type="text" class="form-control" placeholder="tags">
+                </li>
+            
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="btnSaveGame" type="button" class="btn btn-primary">Save Game</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul id="gamesList" class="list-group">
+        <li class="list-group-item">No Games Loaded</li>
       </ul>
     </section>
-
-    <section id="currentGames">
-      <h2><u>Currently Playing</u></h2>
-      <ul id="currentList">
-        <li>Dead by Daylight</li>
-        <li>Elden Ring</li>
-        <li>Multiversus</li>
-        <li>Streets of Rage 4</li>
-        <li>Killer Klowns from Outer Space: The Game</li>
-      </ul>
-    </section>
-
-    <!-- OUT OF COMMISSION FOR NOW -->
-
-    <!-- <section id="gamesRadar">
-      <h2><u>Games on My Radar</u></h2>
-      <ul id="radarList">
-        <li style="background-color:#FAFAFA;">Assassin's Creed Shadows
-          <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/vovkzbtYBC8?si=q_wIB-DaVasytfY_"
-              title="YouTube video player" style="border: none;"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        </li>
-        <li style="background-color:#FAFAFA;">Elden Ring Shadow of the Erdtree
-          <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/6uT8wGtB3yQ?si=1C4gNMbZrzj8be5B"
-              title="YouTube video player" style="border: none;"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        </li>
-        <li style="background-color:#FAFAFA;">Silent Hill 2
-          <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/pyC_qiW_4ZY?si=D58DwXQzxtT4oRoZ"
-              title="YouTube video player" style="border: none;"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        </li>
-        <li style="background-color:#FAFAFA;">Call of Duty: Black Ops 6
-          <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/oyZY_BiTmd8?si=Ep3PF7ACvfa2wcVk"
-              title="YouTube video player" style="border: none;"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        </li>
-      </ul>
-    </section> -->
     
+    <!-- Current Games Section -->
+    <section id="currentGames" class="mt-5">
+      <h2><u>Video Games I'm Currently Playing</u></h2>
+      <div class="row" id="currentGamesContainer">
+        <!-- Current games will be dynamically added here -->
+      </div>
+    </section>
+
+    <!-- Games on Radar Section -->
+    <section id="gamesRadar" class="mt-5">
+      <h2><u>Upcoming Games on My Watchlist</u></h2>
+      <div class="row" id="radarGamesContainer">
+        <!-- Radar games will be dynamically added here -->
+      </div>
+    </section>
+
   </main>
 
-  <div>
-    <h2 id="thankYou"><u>Thank you for taking the time to witness my journey</u></h2>
-    <p id="journey">
-      I'm thrilled to shared my gaming experience with you, I hoped you enjoyed my gaming journey.
-    </p>
-    <img id="htmlOut"
-      src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGdrZXR0b2Mxc2M3Z2tjZG1nd3hwbmpwZXQxdm9yMHp3YmlyaWo4biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uAQm7xzHC0OB2VnSz4/giphy.gif"
-      alt="htmlOut">
+<!-- Thank You Section -->
+<section id="thankYou">
+  <h2><u>Thank you for taking the time to witness my journey!</u></h2>
+  <div class="thank-you-background">
+    <div class="thank-you-content">
+      <div class="d-flex justify-content-center">
+        <button id="confettiButton" class="btn btn-lg btn-light">Click me if you dare!</button>
+      </div>
+    </div>
   </div>
+</section>
+
 
   <footer class="footer bg-body-tertiary text-center text-lg-start fixed-bottom">
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
       © 2024 Favorite Video Games |
       <a class="text-body" href="https://github.com/OmarVCRZ" target="github">ODM@Github</a>
-      <!-- <a href="README.md" target="readme">ReadMe</a> -->
       <!-- Copyright -->
     </div>
   </footer>
@@ -192,8 +220,10 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js'></script>
+  <script src='scripts/data.js'></script>
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script src="./scripts/games-script.js"></script>
-
+  
 </body>
-
 </html>
