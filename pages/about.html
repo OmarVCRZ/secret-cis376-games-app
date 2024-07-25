@@ -5,15 +5,19 @@
   <meta charset="UTF-8">
   <title>od|about</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Normalize CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <!-- Bootstrap CSS -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
+  <!-- Custom stylesheet -->
   <link rel="stylesheet" href="../styles/games-style.css">
   <!-- Import element definition and auto-register -->
   <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
 </head>
 
 <body>
-
+   
+  <!-- Navigation Bar -->
   <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
@@ -32,13 +36,14 @@
             <a class="nav-link" href="#">About Developer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" target="repo" href="https://github.com/OmarVCRZ/cis376-games-app/">
+            <a class="nav-link" target="repo" href="https://github.com/OmarVCRZ/secret-cis376-games-app">
+              <!-- Source code link with angle brackets -->
               <!-- &lft and &gt are < and > brackets to implement-->
               &lt;Source Code <i class="bi bi-github"></i>&gt;</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" target="nu"
-              href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fomarvcrz.github.io%2Fcis376-games-app%2Fpages%2Fabout.html">
+              href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fomarvcrz.github.io%2Fsecret-cis376-games-app%2Fpages%2Fabout.html">
               Check Page Validity</a>
           </li>
         </ul>
@@ -46,13 +51,14 @@
     </div>
   </nav>
   <main id="aboutMain">
-
+    <!-- About Me Section -->
     <h1 class="seeMe">About Omar, the Developer</h1>
- 
+     <!-- Readme Markdown -->
     <div class="m-2 p-2">
       <zero-md src="https://raw.githubusercontent.com/OmarVCRZ/OmarVCRZ/main/README.md"></zero-md>
     </div>
-
+    
+    <!-- Codecademy Section -->
     <h1 id="CodeAcademy">See my Codecademy Work</h1>
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <div class="col">
@@ -60,7 +66,8 @@
           <img src="../images/Learn-HTML.jpeg" class="card-img-top" alt="Learn-HTML">
           <div class="card-body">
             <h5 class="card-title">Learn HTML</h5>
-            <p class="card-text">Completed 7 hour Course <p>
+            <p class="card-text">Completed 7 hour Course
+            <p>
           </div>
         </div>
       </div>
@@ -111,7 +118,8 @@
       </div>
       <div class="col">
         <div class="card">
-          <img src="../images/Learn-jQuery:Effects-and-Event-Handling.jpeg" class="card-img-top" alt="Learn-jQuery: Effects-and-Event-Handling">
+          <img src="../images/Learn-jQuery:Effects-and-Event-Handling.jpeg" class="card-img-top"
+            alt="Learn-jQuery: Effects-and-Event-Handling">
           <div class="card-body">
             <h5 class="card-title">Learn jQuery: Effects and Event Handling [Stack 2/4]</h5>
             <p class="card-text">Completed 1 Hour Course</p>
@@ -156,7 +164,8 @@
       </div>
       <div class="col">
         <div class="card">
-          <img src="../images/Deploying-Websites-using-Git-and-Github.jpeg" class="card-img-top" alt="Deploying-Websites-using-Git-and-Github">
+          <img src="../images/Deploying-Websites-using-Git-and-Github.jpeg" class="card-img-top"
+            alt="Deploying-Websites-using-Git-and-Github">
           <div class="card-body">
             <h5 class="card-title">Deploying Websites using Git and Github [Stack 3/3]</h5>
             <p class="card-text">Completed 1/2 Hour Course</p>
@@ -170,16 +179,19 @@
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
       © 2024 Favorite Video Games |
+      <!-- Links to Github and Codecademy Proof Video -->
       <a class="text-body" href="https://github.com/OmarVCRZ" target="github">ODM@Github</a> |
       <a class="text-body" href="https://youtu.be/H3nQvhHk1BA" target="_blank">C/A-500: Completion-Video</a>
     </div>
-      <!-- Copyright -->
+    <!-- Copyright -->
   </footer>
   <!-- scripts go here -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js'></script>
+  <!-- Custom -->
   <script src="../scripts/games-script.js"></script>
 
 </body>
+
 </html>

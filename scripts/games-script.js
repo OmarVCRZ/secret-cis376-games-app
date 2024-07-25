@@ -1,19 +1,20 @@
 // A $( document ).ready() block.
 $(document).ready(function () {
-
+  // Once the functions loadGamesData and addEvents are called then the DOM is fully loaded.
   loadGamesData("gamesList");
   addEvents();
 
-  });
+});
 
+// The purpose of this function is to populate a list with game data from the "data.games" array.
 function loadGamesData(appendId) {
   let appendElement = $(`#${appendId}`);
 
   appendElement.empty();
+  // Each game details are appended to the HTML element with the ID specificed by the "appendId".
+  $.each(data.games, (index, game) => {
 
-  $.each(data.games, (index, game)=>{
-
-      appendElement.append(`<li id="gameNo${index}Name" class="list-group-item mb-1 gameName">
+    appendElement.append(`<li id="gameNo${index}Name" class="list-group-item mb-1 gameName">
         ${game.name}
 
         <ul class="list-group gameDetails">
@@ -65,42 +66,47 @@ function loadGamesData(appendId) {
         </ul>
       </li>`);
 
-      $('.gameDetails').hide();
-      $('input.editGames').prop('readonly', true);
+    // At the end, it hides detail information and makes inputs fields read only.
+    $('.gameDetails').hide();
+    $('input.editGames').prop('readonly', true);
 
   });
 }
 
 function addEvents() {
-  $('.gameName').on('click', (e)=>{
+  // This will toggle the visibility of game details when clicked.
+  $('.gameName').on('click', (e) => {
 
     let $this = $(e.target);
     let $thisId = $this.attr('id');
 
-    $('#'+ $thisId + ' > ul.gameDetails').toggle();
-    // $('#' + $thisId + '> i.editGame').toggle();
+    $('#' + $thisId + ' > ul.gameDetails').toggle();
   });
 
-  $('#btnHideAll').on('click', (e)=>{
-   
+  // Hides all gameDetail sections.
+  $('#btnHideAll').on('click', (e) => {
+
     $('ul.gameDetails').hide();
 
   });
 
-  $('#btnShowAll').on('click', (e)=>{
+  // Shows all gameDetail sections.
+  $('#btnShowAll').on('click', (e) => {
 
     $('ul.gameDetails').show();
 
   });
 
-  $('input.editGames').on('click', (e)=>{
+  // Makes input fields editiable when clicked on.
+  $('input.editGames').on('click', (e) => {
 
     let $this = $(e.target);
     $this.prop('readonly', false);
 
   });
 
-  $('#btnSaveGame').on('click', ()=>{
+  // This will add a new game to the data array which will update the list.
+  $('#btnSaveGame').on('click', () => {
 
     data.games.push({
       name: $('#gameAddName').val(),
@@ -123,33 +129,33 @@ function addEvents() {
 
   });
 
-  $('input.editGames').on('blur', (e)=>{
+  // This pretty much saves any changes to the game details when input loses focus.
+  $('input.editGames').on('blur', (e) => {
 
     let $this = $(e.target);
     let $thisId = $this.attr('id');
     let $thisKey = $this.attr('name');
-     console.log($thisKey);
-    
+    console.log($thisKey);
+
     let regexDigit = /\d+/g;
     let gameIndex = $thisId.match(regexDigit)[0];
 
     data.games[gameIndex][$thisKey] = $this.val();
-    
+
     $(e.target).prop('readonly', true);
 
   });
 
-  $('btnConsoleData').on('click', ()=>{
-    
-    console.log(data.games);
-  
-  });
+  // Logs the current game date to the console.
+  $('btnConsoleData').on('click', () => {
 
+    console.log(data.games);
+
+  });
 }
 
-// New Code Added (TRY)
-
-// Function to load current games
+// Function to load current games into "currentGamesContainer" 
+//  and creates a visual card game.
 function loadCurrentGames() {
   const currentGames = [
     { title: "Helldivers 2", image: "images/Helldivers-2.jpeg" },
@@ -157,8 +163,8 @@ function loadCurrentGames() {
     { title: "Multiversus", image: "images/Multiversus.jpeg" },
     { title: "Streets of Rage 4", image: "images/Streets-of-Rage-4.jpeg" },
     { title: "Killer Klowns from Outer Space", image: "images/Killer-Klowns.jpeg" },
-    { title: "Borderlands 3", image: "images/Borderlands-3.jpeg"}
-    
+    { title: "Borderlands 3", image: "images/Borderlands-3.jpeg" }
+
   ];
 
   const container = document.getElementById('currentGamesContainer');
@@ -177,7 +183,8 @@ function loadCurrentGames() {
   });
 }
 
-// Function to load games on radar
+// Function to load games on radar into "radarGamesContainer", creates a visual card
+//  and trailer video for each game in the data.
 function loadRadarGames() {
   const radarGames = [
     { title: "Assassin's Creed Shadows", trailer: "https://www.youtube.com/embed/vovkzbtYBC8" },
@@ -204,9 +211,11 @@ function loadRadarGames() {
   });
 }
 
-// Confetti effect for the Thank You section
+// Confetti effect for the thank you section to trigger when the button "confettiButton"
+//  is pressed.
 function setupConfettiButton() {
   const confettiButton = document.getElementById('confettiButton');
+  // Here's a link on how to make a confetti effect: "https://diviengine.com/snippets/divi/confetti-effect-when-clicking-a-divi-button-module/"
   confettiButton.addEventListener('click', () => {
     confetti({
       particleCount: 100,

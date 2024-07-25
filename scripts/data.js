@@ -1,5 +1,9 @@
+// "data" is a JavaScript var holding an object.
 data = {
-    games : [
+    // "games" is the property of the "data" object. This hold an array of game objects.
+    games: [
+        // Inside the "games" property is an array, which each element in this array
+        //  is pretty much an object that represents a specific game.
         {
             name: "The Last of Us Part 2",
             studio: "Naughty Dog",
@@ -35,7 +39,7 @@ data = {
             trailerURL: ["https://youtu.be/mWGIhwJT-FU?si=aUP-nIfxllcZ5Dw5"],
             tags: ["open-world", " western", " story-driven"],
             gotGameOfTheYear: false
-        }, 
+        },
         {
             name: "Elden Ring",
             studio: "FromSoftware",
