@@ -147,7 +147,7 @@ function addEvents() {
   });
 
   // Logs the current game date to the console.
-  $('btnConsoleData').on('click', () => {
+  $('#btnConsoleData').on('click', () => {
 
     console.log(data.games);
 
